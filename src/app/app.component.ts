@@ -7,5 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   title = 'Avec Alex On APEX';
-  name = 'Angular';
+  isAuth = false;
+  
+  constructor() {
+    setTimeout(
+      () => {
+        this.isAuth = true;
+      }, 4000
+    );
+  }
 }

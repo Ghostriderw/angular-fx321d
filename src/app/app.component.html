@@ -3,7 +3,7 @@
   <h1>
     {{ title }}!
   </h1>
-  <img width="300" alt="Apex Logo" src="https://media2.giphy.com/media/fUN9Jal2W57RqQXL2s/giphy.gif">
+  <img width="300" alt="Apex Logo" src="https://media2.giphy.com/media/fUN9Jal2W57RqQXL2s/giphy0.gif">
 </div>
 
 <p>
@@ -21,6 +21,7 @@
         <app-appareil-component></app-appareil-component>
         <app-appareil-component></app-appareil-component>
       </ul>
+      <button class="btn btn-success" [disabled]="!isAuth">recharger</button> 
     </div>
   </div>
 </div>
