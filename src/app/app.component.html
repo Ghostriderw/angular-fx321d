@@ -3,7 +3,7 @@
   <h1>
     {{ title }}!
   </h1>
-  <img width="300" alt="Apex Logo" src="https://media2.giphy.com/media/fUN9Jal2W57RqQXL2s/giphy0.gif">
+  <img width="300" alt="Apex Logo" src="https://media2.giphy.com/media/fUN9Jal2W57RqQXL2s/giphy.gif">
 </div>
 
 <p>
@@ -17,9 +17,9 @@
     <div class="col-xs-12">
       <h2>Mes appareils</h2>
       <ul class="list-group">
-        <app-appareil-component></app-appareil-component>
-        <app-appareil-component></app-appareil-component>
-        <app-appareil-component></app-appareil-component>
+        <app-appareil-component *ngFor="let appareil of appareils"
+          [appareilName]="appareil.name"
+          [appareilStatus]="appareil.status"></app-appareil-component>
       </ul>
       <button class="btn btn-success" [disabled]="!isAuth"
       (click)="onAllumer()">Tout allumer</button> 
