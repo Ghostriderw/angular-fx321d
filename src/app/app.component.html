@@ -18,10 +18,11 @@
       <h2>Mes appareils</h2>
       <p>Mis à jour : {{ lastUpdate | async |uppercase| date: short  }}</p>
       <ul class="list-group">
-        <app-appareil-component *ngFor="let appareil of appareils; let i = index""
+        <app-appareil-component *ngFor="let appareil of appareils; let i = index"
           [appareilName]="appareil.name"
-          [appareilStatus]="appareil.status"></app-appareil-component
-          [index]="i">>
+          [appareilStatus]="appareil.status"
+          [index]="i">
+          </app-appareil-component>
       </ul>
       <button class="btn btn-success"
               [disabled]="!isAuth"

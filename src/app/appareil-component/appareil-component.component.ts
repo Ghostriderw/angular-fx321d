@@ -30,9 +30,9 @@ export class AppareilComponent implements OnInit {
 }
 
 onSwitch() {
-    if(this.appareilStatus === 'allumé') {
+    if(this.appareilStatus === 'Plein') {
       this.appareilService.switchOffOne(this.index);
-    } else if(this.appareilStatus === 'éteint') {
+    } else if(this.appareilStatus === 'Vide') {
       this.appareilService.switchOnOne(this.index);
     }
 }
