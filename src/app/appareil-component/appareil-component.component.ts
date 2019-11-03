@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { appareilService } from './services/appareil.service';
+import { AppareilService } from '../services/appareil.service';
 
 @Component({
   selector: 'app-appareil-component',
