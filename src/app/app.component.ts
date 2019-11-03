@@ -18,24 +18,7 @@ export class AppComponent  {
     );
   });
 
-  appareils = [
-    {
-      name: 'P2020',
-      status: 'Vide'
-    },
-    {
-      name: 'R-301',
-      status: 'Plein'
-    },
-    {
-      name: 'Mastiff',
-      status: 'Plein'
-    }
-  ];
-  
-  
-
- 
+  appareils: any[];
   
   constructor(private appareilService: AppareilService) {
     setTimeout(
@@ -44,8 +27,20 @@ export class AppComponent  {
       }, 4000
     );
   }
+
+  ngOnInit() {
+    this.appareils = this.appareilService.appareils;
+  }
   
   onAllumer() {
-    console.log('On allume tout !');
+    this.appareilService.switchOnAll();
+  }
+
+  onEteindre() {
+    if(confirm('Etes-vous sûr de vouloir vider tous les chargeurs ?')) {
+      this.appareilService.switchOffAll();
+    } else {
+      return null;
+    }
 }
 }
