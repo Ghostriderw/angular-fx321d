@@ -8,7 +8,6 @@ import { AppareilService } from '../services/appareil.service';
 })
 export class AppareilViewComponent implements OnInit {
 
-title = 'Avec Alex On APEX';
   isAuth = false;
   lastUpdate = new Promise((resolve, reject) => {
     const date = new Date();
