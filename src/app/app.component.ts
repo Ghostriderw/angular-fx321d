@@ -7,5 +7,8 @@ import { AppareilService } from './services/appareil.service';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  constructor() {}
+  constructor() {
+    
+  }
+  
 }

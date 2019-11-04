@@ -4,9 +4,10 @@ import { AppareilService } from '../services/appareil.service';
 @Component({
   selector: 'app-appareil-view',
   templateUrl: './appareil-view.component.html',
-  styleUrls: ['./appareil-view.component.scss']
+  styleUrls: ['./appareil-view.component.css']
 })
 export class AppareilViewComponent implements OnInit {
+
 title = 'Avec Alex On APEX';
   isAuth = false;
   lastUpdate = new Promise((resolve, reject) => {
