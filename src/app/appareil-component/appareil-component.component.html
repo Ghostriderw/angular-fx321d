@@ -1,16 +1,16 @@
-<li [ngClass]="{'list-group-item': true,
-                'list-group-item-success': appareilStatus === 'Plein',
-                'list-group-item-danger': appareilStatus === 'Vide'}">
-  <div style="width:20px;height:20px;background-color:red;" 
-       *ngIf="appareilStatus === 'Vide'"></div>
-  <h4 [ngStyle]="{color: getColor()}">Appareil : {{ appareilName }} -- état : {{ getStatus() }}</h4>
-  <input type="text" class="form-control" [(ngModel)]="appareilName">
+  <li [ngClass]="{'list-group-item': true,
+                  'list-group-item-success': appareilStatus === 'Plein',
+                  'list-group-item-danger': appareilStatus === 'Vide'}">
+    <div style="width:20px;height:20px;background-color:red;" 
+        *ngIf="appareilStatus === 'Vide'"></div>
+    <h4 [ngStyle]="{color: getColor()}">Appareil : {{ appareilName }} -- état : {{ getStatus() }}</h4>
+    <input type="text" class="form-control" [(ngModel)]="appareilName">
 
-  <button class="btn btn-sm btn-success"
-          *ngIf="appareilStatus === 'Vide'"
-          (click)="onSwitch()">Plein</button>
-  <button class="btn btn-sm btn-danger"
-          *ngIf="appareilStatus === 'Plein'"
-          (click)="onSwitch()">Vide</button>
-</li>
+    <button class="btn btn-sm btn-success"
+            *ngIf="appareilStatus === 'Vide'"
+            (click)="onSwitch()">Plein</button>
+    <button class="btn btn-sm btn-danger"
+            *ngIf="appareilStatus === 'Plein'"
+            (click)="onSwitch()">Vide</button>
+  </li>
 
