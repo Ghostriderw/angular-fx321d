@@ -7,14 +7,17 @@ export class AppareilService {
 
 appareils = [
     {
+      id:1,
       name: 'P2020',
       status: 'Vide'
     },
     {
+      id:2,
       name: 'R-301',
       status: 'Plein'
     },
     {
+      id:3,
       name: 'Mastiff',
       status: 'Plein'
     }
@@ -38,6 +41,15 @@ switchOnOne(i: number) {
 
 switchOffOne(i: number) {
     this.appareils[i].status = 'Vide';
+}
+
+getAppareilById(id: number) {
+    const appareil = this.appareils.find(
+      (s) => {
+        return s.id === id;
+      }
+    );
+    return appareil;
 }
 
 
