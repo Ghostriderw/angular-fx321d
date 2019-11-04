@@ -12,7 +12,8 @@ import {Routes,RouterModule} from "@angular/router";
 import { AuthService } from './services/auth.service';
 import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
-import { AuthGuardService } from './services/auth-guard.service';
+import { AuthGuard } from './services/auth-guard.service';
+
 
 
 const appRoutes: Routes = [
@@ -28,6 +29,6 @@ const appRoutes: Routes = [
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRoutes) ],
   declarations: [ AppComponent, MonPremierComponent, AppareilComponent, AppareilViewComponent, AuthComponent, SingleAppareilComponent, FourOhFourComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [AppareilService, AuthService, AuthGuardService]
+  providers: [AppareilService, AuthService, AuthGuard]
 })
 export class AppModule { }
