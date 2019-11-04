@@ -3,9 +3,10 @@
         <p>Mis à jour : {{ lastUpdate | async |uppercase| date: short  }}</p>
         <ul class="list-group">
           <app-appareil-component *ngFor="let appareil of appareils; let i = index"
+            [index]="i"
             [appareilName]="appareil.name"
             [appareilStatus]="appareil.status"
-            [index]="i">
+            [id]="appareil.id">
             </app-appareil-component>
         </ul>
         <button class="btn btn-success"
@@ -14,4 +15,6 @@
         <button class="btn btn-danger"
                 [disabled]="!isAuth"
                 (click)="onEteindre()">Tout Vider</button> 
+        
+
 </div>

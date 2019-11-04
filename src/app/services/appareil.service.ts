@@ -22,7 +22,17 @@ appareils = [
       status: 'Plein'
     }
   ];
-  
+
+getAppareilById(id: number) {
+    const appareil = this.appareils.find(
+      (s) => {
+        return s.id === id;
+      }
+    );
+    return appareil;
+}
+
+
 switchOnAll() {
     for(let appareil of this.appareils) {
       appareil.status = 'Plein';
@@ -43,14 +53,7 @@ switchOffOne(i: number) {
     this.appareils[i].status = 'Vide';
 }
 
-getAppareilById(id: number) {
-    const appareil = this.appareils.find(
-      (s) => {
-        return s.id === id;
-      }
-    );
-    return appareil;
-}
+
 
 
 
