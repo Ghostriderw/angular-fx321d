@@ -9,7 +9,7 @@ import { AppareilService } from './services/appareil.service';
 export class AppComponent  {
 
   title = 'Avec Alex On APEX';
-  
+
   constructor() {
     
   }

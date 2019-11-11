@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
  providedIn: 'root'
@@ -25,6 +26,9 @@ appareils = [
     status: 'Plein'
   }
 ];
+
+constructor(private httpClient: HttpClient) { }
+
 
 addAppareil(name: string, status: string) {
     const appareilObject = {
@@ -76,6 +80,19 @@ switchOnOne(i: number) {
 switchOffOne(i: number) {
     this.appareils[i].status = 'Vide';
     this.emitAppareilSubject();
+}
+
+saveAppareilsToServer() {
+    this.httpClient
+      .post('https://httpclient-demo.firebaseio.com/appareils.json', this.appareils)
+      .subscribe(
+        () => {
+          console.log('Enregistrement terminé !');
+        },
+        (error) => {
+          console.log('Erreur ! : ' + error);
+        }
+      );
 }
 
 
